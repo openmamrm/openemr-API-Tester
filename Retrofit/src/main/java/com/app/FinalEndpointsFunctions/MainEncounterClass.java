@@ -13,7 +13,7 @@ import com.app.Response.*;
 public class MainEncounterClass {
 	public void getEncounters(String token) {
 	    Retrofit retrofit = new Retrofit.Builder()
-	        .baseUrl("https://mobileapp.trackdemon.in/")
+	        .baseUrl("")
 	        .addConverterFactory(GsonConverterFactory.create())
 	        .build();
 	    GetEncounter getEncounter = retrofit.create(GetEncounter.class);
@@ -44,7 +44,7 @@ public class MainEncounterClass {
 
 	public void postEncounters(String token) {
 	    Retrofit retrofit = new Retrofit.Builder()
-	        .baseUrl("https://mobileapp.trackdemon.in/")
+	        .baseUrl("")
 	        .addConverterFactory(GsonConverterFactory.create())
 	        .build();
 	    PostEncounter postEncounter = retrofit.create(PostEncounter.class);
@@ -110,7 +110,7 @@ public class MainEncounterClass {
 
 	    scanner.close();
 
-	    Call<EncounterResponse> call = postEncounter.postEncounter("9895c3ba-afc2-4764-a363-cf77f8f14a44", "application/json", "application/json", "Bearer " + token, encounterRequest);
+	    Call<EncounterResponse> call = postEncounter.postEncounter("", "application/json", "application/json", "Bearer " + token, encounterRequest);
 
 	    call.enqueue(new Callback<EncounterResponse>() {
 	        @Override
